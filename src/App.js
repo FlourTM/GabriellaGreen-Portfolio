@@ -1,18 +1,18 @@
 import './App.css';
-import Menu from './Components/SVGs/Menu.tsx';
-import Hexagon from './Components/SVGs/Hexagon.tsx';
-import Logo from './Components/SVGs/Logo.tsx';
-import Modes from './Components/SVGs/Modes.tsx';
-import Socials from './Components/SVGs/Socials.tsx';
+import Navbar from './Components/Navbar';
+import Navmenu from './Components/Navmenu';
+import Home from './Components/Home';
+import About from './Components/About';
+import Projects from './Components/Projects';
+import Contact from './Components/Contact';
 
 function App() {
   return (
-    <div className="App bg-slate-400">
-      <Socials  />
-      <Modes />
-      <Logo className='fill-slate-700 stroke-slate-700'/>
-      <Menu className='fill-slate-700'/>
-      <Hexagon className='stroke-slate-700' />
+    <div>
+      <Navbar />
+      <div>
+        <Navmenu />
+      </div>
       
     </div>
   );
