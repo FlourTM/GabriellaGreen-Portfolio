@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/******************/
+/* Scrollbar Info */
+/******************/
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-LMbg dark:bg-DMbg
+}
+  
+::-webkit-scrollbar-thumb {
+    @apply bg-LMtext2 dark:bg-DMtext2
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-accentPink
+}

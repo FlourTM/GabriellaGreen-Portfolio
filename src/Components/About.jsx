@@ -43,15 +43,15 @@ const About = () => {
           {/* Socials */}
           <div className='flex gap-12 justify-center pt-8 xl:pt-4'>
             <form action='http://www.FlourTM.com/' target='_blank'>
-              <Socials className='w-12 sm:w-20' />
+              <button><Socials className='w-12 sm:w-20 cursor-pointer' /></button>
             </form>
 
             <form action='' target='_blank'>
-              <Socials className='w-12 sm:w-20' />
+              <button><Socials className='w-12 sm:w-20 cursor-pointer' /></button>
             </form>
 
             <form action='http://www.BorderlineBee.com/' target='_blank'>
-              <Socials className='w-12 sm:w-20' />
+              <button><Socials className='w-12 sm:w-20 cursor-pointer' /></button>
             </form>
           </div>
         </div>
