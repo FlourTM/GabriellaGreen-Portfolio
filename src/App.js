@@ -11,7 +11,11 @@ function App() {
     <div>
       <Navbar />
       <div>
-        <Navmenu />
+        {/* <Navmenu /> */}
+        {/* <Home /> */}
+        {/* <About /> */}
+        {/* <Projects /> */}
+        <Contact />
       </div>
       
     </div>

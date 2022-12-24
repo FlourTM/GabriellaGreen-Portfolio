@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Logo from './SVGs/Logo.tsx'
 import Modes from './SVGs/Modes.tsx'
 import Menu from './SVGs/Menu.tsx'
+import './Navbar.css'
 
 const Navbar = () => {
 

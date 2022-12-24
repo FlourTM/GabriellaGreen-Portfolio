@@ -1,0 +1,8 @@
+#Sun {
+    @apply hidden dark:block
+}
+
+#Moon {
+    @apply dark:hidden
+}
+

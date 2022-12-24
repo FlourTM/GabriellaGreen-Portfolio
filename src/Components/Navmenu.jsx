@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Hexagon from './SVGs/Hexagon.tsx'
 
 const Navmenu = () => {
   return (
     <div name="Navmenu" className='w-full h-screen bg-LMbg dark:bg-DMbg'>
+      
       <div className='h-screen flex sm:items-center'>
         <ul className='mx-auto pt-32 flex flex-col sm:gap-10 sm:pl-28 sm:pt-0'>
 
