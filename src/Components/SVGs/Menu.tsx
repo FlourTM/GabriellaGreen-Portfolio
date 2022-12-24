@@ -13,13 +13,15 @@ const Menu = ({ className, height, width, accent }) => {
 
             <g id="Menu">
                 <path id="Open"
+                className="Open"
                     fill-rule="evenodd"
                     clip-rule="evenodd"
                     d="M20.6603 10L29.3205 15V25L20.6603 30L12 25V15L20.6603 10ZM46.6603 10L55.3205 15V25L46.6603 30L38 25V15L46.6603 10ZM81.3205 15L72.6603 10L64 15V25L72.6603 30L81.3205 25V15ZM20.6603 62L29.3205 67V77L20.6603 82L12 77V67L20.6603 62ZM55.3205 67L46.6603 62L38 67V77L46.6603 82L55.3205 77V67ZM72.6603 62L81.3205 67V77L72.6603 82L64 77V67L72.6603 62ZM29.3205 41L20.6603 36L12 41V51L20.6603 56L29.3205 51V41ZM46.6603 36L55.3205 41V51L46.6603 56L38 51V41L46.6603 36ZM81.3205 41L72.6603 36L64 41V51L72.6603 56L81.3205 51V41Z"
                     fill={className} // Default EBEBEB
                 />
 
-                <g id="OpenHover">
+                <g id="OpenHover"
+                    className="OpenHover">
                     <path id="Accent_OH"
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -34,7 +36,8 @@ const Menu = ({ className, height, width, accent }) => {
                     />
                 </g>
 
-                <g id="OpenClick">
+                <g id="OpenClick"
+                    className="OpenClick">
                     <path id="Accent_OC"
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -50,13 +53,15 @@ const Menu = ({ className, height, width, accent }) => {
                 </g>
 
                 <path id="Close"
+                className="Close"
                     fill-rule="evenodd"
                     clip-rule="evenodd"
                     d="M69.0504 23.0377L62.7372 21.3461L58.1156 25.9676L59.8072 32.2808L66.1204 33.9725L70.742 29.3509L69.0504 23.0377ZM74.0881 30.2474L71.4999 20.5882L61.8406 18L54.7695 25.0711L57.3577 34.7303L67.017 37.3185L74.0881 30.2474ZM32.2808 59.8072L25.9676 58.1156L21.3461 62.7372L23.0377 69.0504L29.3509 70.742L33.9725 66.1204L32.2808 59.8072ZM37.3185 67.017L34.7303 57.3577L25.0711 54.7695L18 61.8406L20.5882 71.4999L30.2474 74.0881L37.3185 67.017ZM25.9676 21.3461L32.2808 23.0377L33.9725 29.3509L29.3509 33.9725L23.0377 32.2808L21.3461 25.9676L25.9676 21.3461ZM34.7303 20.5882L37.3185 30.2474L30.2474 37.3185L20.5882 34.7303L18 25.0711L25.0711 18L34.7303 20.5882ZM50.6656 41.4224L44.3524 39.7308L39.7308 44.3524L41.4224 50.6656L47.7356 52.3572L52.3572 47.7356L50.6656 41.4224ZM55.7033 48.6322L53.1151 38.973L43.4558 36.3848L36.3848 43.4558L38.973 53.1151L48.6322 55.7033L55.7033 48.6322ZM62.7372 58.1156L69.0504 59.8072L70.742 66.1204L66.1204 70.742L59.8072 69.0504L58.1156 62.7372L62.7372 58.1156ZM71.4999 57.3577L74.0881 67.017L67.017 74.0881L57.3577 71.4999L54.7695 61.8406L61.8406 54.7695L71.4999 57.3577Z"
                     fill={className}
                 />
 
-                <g id="CloseHover">
+                <g id="CloseHover"
+                    className="CloseHover">
                     <path id="Accent_CH"
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -71,7 +76,8 @@ const Menu = ({ className, height, width, accent }) => {
                     />
                 </g>
 
-                <g id="CloseClick">
+                <g id="CloseClick"
+                    className="CloseClick">
                     <path id="Accent_CC"
                         fill-rule="evenodd"
                         clip-rule="evenodd"

@@ -1,7 +1,14 @@
 import React, { Suspense } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Home from './Home'
+import About from './About'
+import Projects from './Projects'
+import Contact from './Contact'
 import Hexagon from './SVGs/Hexagon.tsx'
 
 const Navmenu = () => {
+  const navigate = useNavigate()
+
   return (
     <div name="Navmenu" className='w-full h-screen bg-LMbg dark:bg-DMbg'>
       
@@ -16,7 +23,7 @@ const Navmenu = () => {
               <Hexagon className='stroke-LMtext1 dark:stroke-DMtext1 w-16 sm:w-24' />
               <p className='text-3xl sm:text-4xl absolute text-LMtext1 dark:text-DMtext1'>01</p>
             </div>
-            <p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>Home</p>
+            <button onClick={() => {navigate("/");}}><p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>Home</p></button>
           </div>
 
           {/* About */}
@@ -27,7 +34,7 @@ const Navmenu = () => {
               <Hexagon className='stroke-accentPink w-16 sm:w-24' />
               <p className='text-3xl sm:text-4xl absolute text-LMtext1 dark:text-DMtext1'>02</p>
             </div>
-            <p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>About</p>
+            <button onClick={() => {navigate("/about");}}><p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>About</p></button>
           </div>
 
           {/* Projects */}
@@ -38,7 +45,7 @@ const Navmenu = () => {
               <Hexagon className='stroke-accentBlue w-16 sm:w-24' />
               <p className='text-3xl sm:text-4xl absolute text-LMtext1 dark:text-DMtext1'>03</p>
             </div>
-            <p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>Projects</p>
+            <button onClick={() => {navigate("/projects");}}><p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>Projects</p></button>
           </div>
 
           {/* Contact */}
@@ -49,7 +56,7 @@ const Navmenu = () => {
               <Hexagon className='stroke-accentYellow w-16 sm:w-24' />
               <p className='text-3xl sm:text-4xl absolute text-LMtext1 dark:text-DMtext1'>04</p>
             </div>
-            <p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>Contact</p>
+            <button onClick={() => {navigate("/contact");}}><p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>Contact</p></button>
           </div>
         </ul>
       </div>

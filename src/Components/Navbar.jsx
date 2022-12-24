@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Navmenu from './Navmenu'
+import Home from './Home'
 import Logo from './SVGs/Logo.tsx'
 import Modes from './SVGs/Modes.tsx'
 import Menu from './SVGs/Menu.tsx'
 import './Navbar.css'
 
 const Navbar = () => {
-
   // Function to change names at top
   const [loopNum, setLoopNum] = useState(0)
   const [text, setText] = useState("")
@@ -42,23 +44,34 @@ const Navbar = () => {
 
   useEffect(() => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
+      setTheme('dark')
     } else {
-      setTheme('light');
+      setTheme('light')
     }
   }, [])
 
   useEffect(() => {
     if (theme === "dark") {
-      document.documentElement.classList.add("dark");
+      document.documentElement.classList.add("dark")
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove("dark")
     }
   }, [theme]);
 
   const handleThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+    setTheme(theme === "dark" ? "light" : "dark")
+  }
+
+  // Function to handle Menu button
+  const navigate = useNavigate()
+
+  const navmenu = () =>{
+    if (window.location.pathname.includes('menu')) {
+      navigate(-1)
+    } else {
+      navigate('/menu')
+    }
+  }
 
   // Navbar
   return (
@@ -67,10 +80,10 @@ const Navbar = () => {
 
         {/* Logo and Name */}
         <div className='flex items-center gap-3'>
-          <Logo height='50' width='80' className='cursor-pointer
+          <button onClick={() => {navigate("/");}}><Logo height='50' width='80' className='cursor-pointer
             fill-LMtext1 stroke-LMtext1 
             dark:fill-DMtext1 dark:stroke-DMtext1
-            hover:fill-accentPink hover:stroke-accentPink' />
+            hover:fill-accentPink hover:stroke-accentPink' /></button>
 
           <p className='hidden sm:block sm:text-xl sm:tracking-wide sm:text-LMtext1 sm:dark:text-DMtext1' >{text}</p>
         </div>
@@ -79,7 +92,7 @@ const Navbar = () => {
         {/* Light/Dark Mode and Menu Icon */}
         <div className='flex items-center gap-2 sm:gap-7 pr-2'>
           <button onClick={handleThemeSwitch}><Modes height='35' className='cursor-pointer' /></button>
-          <Menu height='50' width='50' className='fill-LMtext1 dark:fill-DMtext1' />
+          <button className='menuBtn' onClick={navmenu}><Menu height='50' width='50' className='fill-LMtext1 dark:fill-DMtext1 cursor-pointer' /></button>
         </div>
 
       </div>

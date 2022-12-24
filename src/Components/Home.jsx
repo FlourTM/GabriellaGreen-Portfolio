@@ -1,6 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import About from './About';
+import Projects from './Projects';
+import Contact from './Contact';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div name="Home" className='w-full h-screen bg-LMbg dark:bg-DMbg'>
       <div className='h-screen flex sm:items-center'>
@@ -30,11 +36,11 @@ const Home = () => {
             
 
             <div className='flex gap-4 sm:gap-16'>
-              <button className='border-4 rounded-lg w-28 sm:w-32 py-1 border-accentPink text-lg sm:text-xl uppercase font-semibold text-LMtext1 dark:text-DMtext1
+              <button onClick={() => {navigate("/about");}} className='border-4 rounded-lg w-28 sm:w-32 py-1 border-accentPink text-lg sm:text-xl uppercase font-semibold text-LMtext1 dark:text-DMtext1
                 hover:bg-accentPink dark:hover:text-DMbg'>About</button>
-              <button className='border-4 rounded-lg w-28 sm:w-32 py-1 border-accentBlue text-lg sm:text-xl uppercase font-semibold text-LMtext1 dark:text-DMtext1
+              <button onClick={() => {navigate("/projects");}} className='border-4 rounded-lg w-28 sm:w-32 py-1 border-accentBlue text-lg sm:text-xl uppercase font-semibold text-LMtext1 dark:text-DMtext1
                 hover:bg-accentBlue dark:hover:text-DMbg'>Projects</button>
-              <button className='border-4 rounded-lg w-28 sm:w-32 py-1 border-accentYellow text-lg sm:text-xl uppercase font-semibold text-LMtext1 dark:text-DMtext1
+              <button onClick={() => {navigate("/contact");}} className='border-4 rounded-lg w-28 sm:w-32 py-1 border-accentYellow text-lg sm:text-xl uppercase font-semibold text-LMtext1 dark:text-DMtext1
                 hover:bg-accentYellow dark:hover:text-DMbg'>Contact</button>
             </div>
           </div>

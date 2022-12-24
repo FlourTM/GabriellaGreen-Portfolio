@@ -6,3 +6,14 @@
     @apply dark:hidden
 }
 
+.OpenHover, .OpenClick, .Close, .CloseHover, .CloseClick {
+    @apply hidden z-10
+}
+
+.Open {
+    @apply z-0
+}
+
+.menuBtn:hover .OpenHover {
+    @apply block
+}
