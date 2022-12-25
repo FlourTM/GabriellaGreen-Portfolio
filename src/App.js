@@ -9,29 +9,16 @@ import Contact from './Components/Contact';
 
 function App() {
   return (
-    <div>
-      
-      {/* <Home /> */}
-
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/menu" element={<Navmenu />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Router>
-      {/* <div>
-        <Navmenu />
-        
-        <About />
-        <Projects />
-        <Contact />
-      </div> */}
-      
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/menu" element={<Navmenu />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>     
   );
 }
 

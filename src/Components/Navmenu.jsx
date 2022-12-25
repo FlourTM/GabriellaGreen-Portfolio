@@ -1,18 +1,33 @@
 import React, { Suspense } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Home from './Home'
-import About from './About'
-import Projects from './Projects'
-import Contact from './Contact'
 import Hexagon from './SVGs/Hexagon.tsx'
+
+import YellowShape from './Models/YellowShape.jsx'
+import PinkShape from './Models/PinkShape.jsx'
+import BlueShape from './Models/BlueShape.jsx'
+import { Canvas } from '@react-three/fiber'
 
 const Navmenu = () => {
   const navigate = useNavigate()
 
   return (
     <div name="Navmenu" className='w-full h-screen bg-LMbg dark:bg-DMbg'>
-      
       <div className='h-screen flex sm:items-center'>
+        <div className='absolute w-1/3'>
+          <Canvas>
+            <pointLight position={[10, 5, 10]} />
+            <YellowShape />
+          </Canvas>
+          <Canvas>
+            <pointLight position={[10, 5, 10]} />
+            <BlueShape />
+          </Canvas>
+          <Canvas>
+            <pointLight position={[10, 5, 10]} />
+            <PinkShape />
+          </Canvas>
+        </div>
+
         <ul className='mx-auto pt-32 flex flex-col sm:gap-10 sm:pl-28 sm:pt-0'>
 
           {/* Home */}
@@ -23,7 +38,7 @@ const Navmenu = () => {
               <Hexagon className='stroke-LMtext1 dark:stroke-DMtext1 w-16 sm:w-24' />
               <p className='text-3xl sm:text-4xl absolute text-LMtext1 dark:text-DMtext1'>01</p>
             </div>
-            <button onClick={() => {navigate("/");}}><p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>Home</p></button>
+            <button onClick={() => { navigate("/"); }}><p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>Home</p></button>
           </div>
 
           {/* About */}
@@ -34,7 +49,7 @@ const Navmenu = () => {
               <Hexagon className='stroke-accentPink w-16 sm:w-24' />
               <p className='text-3xl sm:text-4xl absolute text-LMtext1 dark:text-DMtext1'>02</p>
             </div>
-            <button onClick={() => {navigate("/about");}}><p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>About</p></button>
+            <button onClick={() => { navigate("/about"); }}><p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>About</p></button>
           </div>
 
           {/* Projects */}
@@ -45,7 +60,7 @@ const Navmenu = () => {
               <Hexagon className='stroke-accentBlue w-16 sm:w-24' />
               <p className='text-3xl sm:text-4xl absolute text-LMtext1 dark:text-DMtext1'>03</p>
             </div>
-            <button onClick={() => {navigate("/projects");}}><p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>Projects</p></button>
+            <button onClick={() => { navigate("/projects"); }}><p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>Projects</p></button>
           </div>
 
           {/* Contact */}
@@ -56,7 +71,7 @@ const Navmenu = () => {
               <Hexagon className='stroke-accentYellow w-16 sm:w-24' />
               <p className='text-3xl sm:text-4xl absolute text-LMtext1 dark:text-DMtext1'>04</p>
             </div>
-            <button onClick={() => {navigate("/contact");}}><p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>Contact</p></button>
+            <button onClick={() => { navigate("/contact"); }}><p className='uppercase text-4xl sm:text-6xl font-medium px-6 text-LMtext1 dark:text-DMtext1'>Contact</p></button>
           </div>
         </ul>
       </div>

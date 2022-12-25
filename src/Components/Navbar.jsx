@@ -6,6 +6,7 @@ import Logo from './SVGs/Logo.tsx'
 import Modes from './SVGs/Modes.tsx'
 import Menu from './SVGs/Menu.tsx'
 import './Navbar.css'
+import { wait } from '@testing-library/user-event/dist/utils'
 
 const Navbar = () => {
   // Function to change names at top
@@ -64,11 +65,59 @@ const Navbar = () => {
 
   // Function to handle Menu button
   const navigate = useNavigate()
+  const menuBtn = document.getElementById('menuBtn'),
+    openBtn = document.getElementById('Open'),
+    openHover = document.getElementById('OpenHover'),
+    openClick = document.getElementById('OpenClick'),
+    closeBtn = document.getElementById('Close'),
+    closeHover = document.getElementById('CloseHover'),
+    closeClick = document.getElementById('CloseClick')
 
-  const navmenu = () =>{
+  window.onload = () => {
+    if (window.location.pathname.includes('menu')) {
+      openBtn.classList.add('hidden')
+      openHover.classList.add('hidden')
+      openClick.classList.add('hidden')
+      closeBtn.classList.remove('hidden')
+      closeHover.classList.add('hidden')
+      closeClick.classList.add('hidden')
+
+      menuBtn.addEventListener('mouseover', function () {
+        closeBtn.classList.add('hidden')
+        closeHover.classList.remove('hidden')
+      })
+
+      menuBtn.addEventListener('mouseout', function () {
+        closeBtn.classList.remove('hidden')
+        closeHover.classList.add('hidden')
+        closeClick.classList.add('hidden')
+      })
+    }
+    else {
+      openBtn.classList.remove('hidden')
+      openHover.classList.add('hidden')
+      openClick.classList.add('hidden')
+      closeBtn.classList.add('hidden')
+      closeHover.classList.add('hidden')
+      closeClick.classList.add('hidden')
+
+      menuBtn.addEventListener('mouseover', function () {
+        openBtn.classList.add('hidden')
+        openHover.classList.remove('hidden')
+      })
+
+      menuBtn.addEventListener('mouseout', function () {
+        openBtn.classList.remove('hidden')
+        openHover.classList.add('hidden')
+      })
+    }
+  }
+
+  const navmenu = () => {
     if (window.location.pathname.includes('menu')) {
       navigate(-1)
-    } else {
+    }
+    else {
       navigate('/menu')
     }
   }
@@ -80,7 +129,7 @@ const Navbar = () => {
 
         {/* Logo and Name */}
         <div className='flex items-center gap-3'>
-          <button onClick={() => {navigate("/");}}><Logo height='50' width='80' className='cursor-pointer
+          <button onClick={() => { navigate("/"); }}><Logo height='50' width='80' className='cursor-pointer
             fill-LMtext1 stroke-LMtext1 
             dark:fill-DMtext1 dark:stroke-DMtext1
             hover:fill-accentPink hover:stroke-accentPink' /></button>
@@ -92,7 +141,7 @@ const Navbar = () => {
         {/* Light/Dark Mode and Menu Icon */}
         <div className='flex items-center gap-2 sm:gap-7 pr-2'>
           <button onClick={handleThemeSwitch}><Modes height='35' className='cursor-pointer' /></button>
-          <button className='menuBtn' onClick={navmenu}><Menu height='50' width='50' className='fill-LMtext1 dark:fill-DMtext1 cursor-pointer' /></button>
+          <button className='menuBtn' id='menuBtn' onClick={navmenu}><Menu height='50' width='50' className='fill-LMtext1 dark:fill-DMtext1 cursor-pointer' /></button>
         </div>
 
       </div>
